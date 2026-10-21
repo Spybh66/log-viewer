@@ -92,7 +92,12 @@ injectBefore(
 
 // ---- Assets ----
 const assetsOut = path.join(viewer, "assets");
-fs.cpSync(path.join(staticDir, "bundledAssets"), assetsOut, { recursive: true });
+// site.config.json "excludeBundledAssets": bundled asset folders to leave out (saves Pages space).
+const excluded = new Set(siteConfig.excludeBundledAssets ?? []);
+fs.cpSync(path.join(staticDir, "bundledAssets"), assetsOut, {
+  recursive: true,
+  filter: (src) => !excluded.has(path.relative(path.join(staticDir, "bundledAssets"), src).split(path.sep)[0]),
+});
 const userAssets = path.join(root, "assets");
 if (fs.existsSync(userAssets)) {
   for (const e of fs.readdirSync(userAssets, { withFileTypes: true })) {

@@ -1,1 +1,12 @@
-{ "title": "Team 3467 Log Viewer", "teamNumber": 3467 }
+{
+  "title": "Team 3467 Log Viewer",
+  "teamNumber": 3467,
+  "excludeBundledAssets": [
+    "Field2d_20252026FTCFieldV1",
+    "Field2d_FTCEvergreen",
+    "Field3d_20252026FTCFieldV1",
+    "Robot_FTCDriveBaseV1",
+    "Robot_FTCSimpleDriveBase",
+    "Robot_2026FRCKitBotV1"
+  ]
+}

@@ -15,7 +15,7 @@ A static, GitHub-Pages-hostable repository and viewer for FRC robot logs. Commit
 2. Settings > Pages > Source: **GitHub Actions**.
 3. The workflow in `.github/workflows/deploy.yml` builds and deploys on every push.
 
-Edit `site.config.json` to change the site title and team number.
+Edit `site.config.json` to change the site title and team number, and to list bundled asset folders to leave out (`excludeBundledAssets`, saves Pages space).
 
 ## Adding logs
 
