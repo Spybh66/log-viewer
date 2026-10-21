@@ -1,0 +1,15 @@
+{
+  "name": "frc-log-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static, GitHub-Pages-hostable FRC log repository and viewer",
+  "type": "module",
+  "scripts": {
+    "fetch-lite": "node scripts/fetch-lite.mjs",
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "add-log": "node scripts/add-log.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": { "tar": "^7.4.3" }
+}
