@@ -158,7 +158,7 @@
   $("search").addEventListener("input", render);
   $("sort").addEventListener("change", render);
 
-  fetch("logs/index.json").then(function (r) { return r.json(); }).then(function (j) {
+  fetch("logs/index.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (j) {
     logs = j.logs || [];
     var d = new URL(location.href).searchParams.get("dir");
     if (d) folder = d.replace(/^\/+|\/+$/g, "");

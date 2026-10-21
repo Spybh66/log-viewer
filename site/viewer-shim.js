@@ -21,7 +21,7 @@
   var indexPromise = null;
   function loadIndex() {
     if (!indexPromise) {
-      indexPromise = origFetch(new URL("index.json", logsBase))
+      indexPromise = origFetch(new URL("index.json", logsBase), { cache: "no-cache" })
         .then(function (r) {
           if (!r.ok) throw new Error("logs/index.json: " + r.status);
           return r.json();
@@ -129,7 +129,7 @@
         var u = new URL(reqUrl, location.href);
         if (u.origin === location.origin) {
           if (u.pathname === assetsPathA || u.pathname === assetsPathB) {
-            return origFetch(new URL("assets/index.json", viewerBase));
+            return origFetch(new URL("assets/index.json", viewerBase), { cache: "no-cache" });
           }
           if (u.pathname === logsPath || u.pathname === logsPrefix.slice(0, -1) + "/") {
             return loadIndex().then(function (idx) {
